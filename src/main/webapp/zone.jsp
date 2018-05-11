@@ -34,14 +34,14 @@
         //如果查询结果不为空，则对结果进行遍历显示到表格中
         if(lsz!=null && lsz.size()>0){
     %>
-    <th>
-    <td>id</td>
-    <td>zone name</td>
-    <td>zone area</td>
-    <td>delete</td>
-    <td>update</td>
 
-    </th>
+    <th>id</th>
+    <th>zone name</th>
+    <th>zone area</th>
+    <th>delete</th>
+    <th>update</th>
+
+
 
     <%
         for(Zone z : lsz){
