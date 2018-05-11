@@ -13,6 +13,10 @@ import java.util.List;
 /**
  * Created by hd48552 on 2018/5/9.
  */
+
+/**
+ * 操作zone数据的数据库操作类
+ */
 public class ZoneDao  implements Dao<Zone>{
     QueryRunner queryRunner = new QueryRunner();
     private Class<Zone> clazz;

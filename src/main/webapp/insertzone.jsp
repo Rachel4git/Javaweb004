@@ -11,6 +11,15 @@
     <title>insertzone</title>
 </head>
 <body>
+<form method="get" action="add.do">
+    ID：<input type="text" name="id">
+    <br>
+    zone name <input type="text" name="zonename">
+    <br>
+    zone area <input type="text" name="zonearea">
+    <br>
+    <input type="submit" name="add" value="add">
 
+</form>
 </body>
 </html>

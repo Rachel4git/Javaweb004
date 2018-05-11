@@ -7,6 +7,11 @@ import java.util.List;
 /**
  * Created by hd48552 on 2018/5/9.
  */
+
+/**
+ * dao接口，提供数据库操作的一般方法
+ * @param <T>
+ */
 public interface Dao<T> {
 
 //  query

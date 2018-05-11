@@ -12,6 +12,8 @@
     <title>zone</title>
 </head>
 <body>
+<%--表单 获取用户查询输入--%>
+<%--将查询请求参数发送到 query.do 对应的servlet，由该servlet处理请求--%>
 <form method="get" action="query.do">
     ID：<input type="text" name="id">
     <br>
@@ -19,21 +21,25 @@
     <br>
     zone area <input type="text" name="zonearea">
     <br>
-    <input type="submit" name="query">
-    <a href="add.do">insert</a>
+    <input type="submit" name="query" value="query">
+    <a href="insertzone.jsp">insert</a>
 </form>
 
-
+<%--表格显示查询结果--%>
 <table cellspacing="0" cellpadding="1" border="2">
 
     <%
+        //query.do对应的servlet将查询结果放到request中，通过request.getAttribute可以获取该结果
         List<Zone> lsz = (List<Zone>) request.getAttribute("zonelist");
+        //如果查询结果不为空，则对结果进行遍历显示到表格中
         if(lsz!=null && lsz.size()>0){
     %>
     <th>
     <td>id</td>
     <td>zone name</td>
     <td>zone area</td>
+    <td>delete</td>
+    <td>update</td>
 
     </th>
 
@@ -44,8 +50,12 @@
             <td> <%= z.getId()%></td>
             <td> <%= z.getZoneName()%></td>
             <td> <%= z.getZoneArea()%></td>
-            <td> <a href="update.do" name="update">update</a> </td>
-            <td> <a href="delete.do" name="delete">delete</a></td>
+            <td>
+                <a href="delete.do?id=<%= z.getId()%>&zonename=<%= z.getZoneName()%>&zonearea=<%= z.getZoneArea()%>" name="delete">delete</a>
+            </td>
+            <td>
+                <a href="update.jsp?id=<%= z.getId()%>&zonename=<%= z.getZoneName()%>&zonearea=<%= z.getZoneArea()%>" name="update">update</a>
+            </td>
         </tr>
 
      <%

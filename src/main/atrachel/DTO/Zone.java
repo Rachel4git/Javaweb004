@@ -4,6 +4,9 @@ package main.atrachel.DTO;
  * Created by hd48552 on 2018/5/9.
  */
 
+/**
+ * 数据库实体类
+ */
 public class Zone {
     private  Integer id;
     private  String zone_name;

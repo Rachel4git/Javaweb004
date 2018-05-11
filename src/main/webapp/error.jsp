@@ -11,6 +11,6 @@
     <title>error</title>
 </head>
 <body>
- 您访问的页面不存在
+ <%= request.getAttribute("message")%>
 </body>
 </html>
